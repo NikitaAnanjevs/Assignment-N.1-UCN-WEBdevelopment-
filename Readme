@@ -1,0 +1,25 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Short description¬
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+This code corresponds to the requirements of the first assignment.
+
+It is a small web application based on javaScript. 
+
+It allow to LogIn to the repository with OAuth2 powered by Facebook SDK
+It request FaceBook server for a name of current SignedIn client.
+FaceBook server return the name of client on the web application page.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Software and fetures.
+
+Single index.html file
+FaceBook Api
+OAuth2
+PhpStorm JetBrains
+GitHub
+GitBush
+MAMP - Apache localhost server

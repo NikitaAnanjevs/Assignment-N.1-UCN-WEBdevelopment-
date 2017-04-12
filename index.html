@@ -1,0 +1,129 @@
+<div id="fb-root"></div>
+<!-- Page Style-->
+
+
+<style type="text/css" >
+.containerMain {
+    padding:30px;
+    margin-bottom: 30px;
+    margin: 50px;
+    line-height: 2.5;
+    background: #eeeeee;
+}
+    .statusBlock{color:red; font-size: 100px; font-style: oblique;}
+    h1{font-size: 3em;}
+    p{font-size: 2em;}
+    li{font-size: 1.5em;}
+    button{width:200px; height: 75px; margin-left: 15px;}
+
+</style>
+
+
+
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '433645820318072',
+            status: true,
+            cookie: true,
+            xfbml: true
+        });
+    };
+
+    /* Load the  facebook SDK asynchronously*/
+    (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+
+
+
+   /*  Login Function*/
+    function login() {
+        FB.login(function(response) {
+        FB.api('/me', function (userinfoaccount) {
+
+    console.log ('My name is '+ userinfoaccount.name);
+
+});
+
+            document.getElementById('status').innerHTML = ' Your are logged In '
+            // handle the response
+            console.log("You are in");
+
+        });
+    }
+    /* LogOut Function*/
+    function logout() {
+        FB.logout(function(response) {
+            // user is now logged out
+            document.getElementById('status').innerHTML = 'You are not logged into FB anymore';
+
+
+            console.log("You have logged out");
+        });
+    }
+
+    var status = FB.getLoginStatus();
+
+    console.log(status);
+
+   /* Show userName Function*/
+    function getInfo(){
+        FB.api('/me', function (userinfoaccount) {
+
+            console.log ('My name is '+ userinfoaccount.name);
+            document.getElementById('status').innerHTML =' My name is '+ userinfoaccount.name;
+
+        });
+    }
+/*End of Script*/
+</script>
+
+
+
+<!--Project Desctiption-->
+
+<div class="containerMain">
+
+<div class="descriptionPage">
+<h1> The Assignment 1. By Nikita Ananjev </h1>
+<p> This is the basic javascript application which covers the requrements of the assignment.
+</p>
+<ol>
+    <li>Use a web Services with a authorized user
+    </li>
+    <li>Request data from the Web Service
+    </li>
+    <li>Display the data in an web page
+    </li>
+</ol>
+</div>
+
+
+<div id="status" class="statusBlock">
+
+
+</div>
+
+
+<button onclick="javascript:login();">Login Facebook</button>
+
+<br>
+
+<button onclick="javascript:logout();">Logout from Facebook</button>
+
+<br>
+
+<button onclick="javascript:getInfo();">Show Info</button>
+
+
+</div>
+
